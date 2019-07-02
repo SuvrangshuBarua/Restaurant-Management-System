@@ -1,0 +1,35 @@
+﻿body {    
+         background:url('../images/dish.jpg') no-repeat center center fixed;
+        -moz-background-size: cover;
+        -webkit-background-size:cover;
+    height: 799px;
+}
+
+.button-3d {
+ position:relative;
+ width: auto;
+ color:white;
+ text-decoration:none;
+ 
+ border-radius:5px;
+ border:solid 1px #7e389e;
+ background:#7e389e;
+ text-align:center;
+ padding:8px 9px 7px;
+ 
+ -webkit-transition: all 0.1s;
+ -moz-transition: all 0.1s;
+ transition: all 0.1s;
+ 
+ -webkit-box-shadow: 0px 6px 0px #241a28;
+ -moz-box-shadow: 0px 6px 0px #241a28;
+ box-shadow: 0px 6px 0px #241a28;
+ font-size:20px;
+}
+    .button-3d:active{
+ -webkit-box-shadow: 0px 2px 0px #824f96;
+ -moz-box-shadow: 0px 2px 0px #824f96;
+ box-shadow: 0px 2px 0px #824f96;
+ position:relative;
+ top:4px;
+}

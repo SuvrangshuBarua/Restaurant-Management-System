@@ -1,0 +1,105 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="register.aspx.cs" Inherits="webpages_Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Register</title>
+    <link href="../css/signup.css" rel="stylesheet" />
+    <style>
+        .formclass
+        {
+            padding:20px;
+            margin:0px auto;
+            background:#3d3d3d;
+            width:350px;
+        }
+       
+
+        input
+        {
+            padding:2px;
+           
+            }
+        .auto-style1 {
+            width: 248px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="formclass">
+    <table border="0" cellpadding="4" cellspacing="4" style="width: 620px">
+    <tr>
+        <h1>
+            Registration
+        </h1>
+    </tr>
+    <tr>
+        <td>
+            Username
+        </td>
+        <td>
+            <asp:TextBox ID="txtUsername" CssClass="input" runat="server" />
+        </td>
+        <td class="auto-style1">
+            <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="txtUsername"
+                runat="server" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password
+        </td>
+        <td>
+            <asp:TextBox ID="txtPassword" CssClass="input" runat="server" TextMode="Password" />
+            <ajaxToolkit:PasswordStrength ID="PasswordStrength1" runat="server" DisplayPosition="LeftSide" MinimumNumericCharacters="1" MinimumUpperCaseCharacters="1" PreferredPasswordLength="8" TargetControlID="txtPassword"></ajaxToolkit:PasswordStrength>
+        </td>
+        <td class="auto-style1">
+            <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="txtPassword"
+                runat="server" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Confirm Password
+        </td>
+        <td>
+            <asp:TextBox ID="txtConfirmPassword" CssClass="input" runat="server" TextMode="Password" />
+            <ajaxToolkit:PasswordStrength ID="PasswordStrength2" runat="server" DisplayPosition="LeftSide" MinimumNumericCharacters="1" MinimumUpperCaseCharacters="1" PreferredPasswordLength="8" TargetControlID="txtConfirmPassword"></ajaxToolkit:PasswordStrength>
+        </td>
+        <td class="auto-style1">
+            <asp:CompareValidator ErrorMessage="Passwords do not match." ForeColor="Red" ControlToCompare="txtPassword"
+                ControlToValidate="txtConfirmPassword" runat="server" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Email
+        </td>
+        <td>
+            <asp:TextBox ID="txtEmail" CssClass="input" runat="server" />
+        </td>
+        <td class="auto-style1">
+            <asp:RequiredFieldValidator ErrorMessage="Required" Display="Dynamic" ForeColor="Red"
+                ControlToValidate="txtEmail" runat="server" />
+            <asp:RegularExpressionValidator runat="server" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid email address." />
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <asp:Button Text="Register" CssClass="button-3d" runat="server" OnClick="RegisterUser" />
+        </td>
+        <td class="auto-style1">
+            &nbsp;</td>
+    </tr>
+</table>
+    </div>
+        <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+        </ajaxToolkit:ToolkitScriptManager>
+    </form>
+</body>
+</html>

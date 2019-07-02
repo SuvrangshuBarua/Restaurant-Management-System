@@ -1,0 +1,97 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SignIn.aspx.cs" Inherits="webpages_SignIn_SignIn" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Sign In</title>
+
+   
+    
+    <link href="../css/login.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+        
+        
+        .checker
+        {
+            margin-left:18px;
+        } 
+       
+        p{
+            color:white;
+            font-size:20px;
+        }
+        .formclass
+        {
+            padding:20px;
+            margin:0px auto;
+            background:#3d3d3d;
+            width:250px;
+        }
+
+       
+       
+
+        input
+        {
+            padding:2px;
+           
+            width:100%;
+        }
+
+        #br
+        {
+            float:right;
+        }
+        #bl
+        {
+            float:left;
+        }
+    </style>
+</head>
+<body style="background:url('../images/dish.jpg') no-repeat center center fixed;">
+        
+    <form id="form1" runat="server">
+    <div class="formclass">
+        <h1>Log In</h1>
+        <asp:TextBox ID="txtuser" CssClass="input" placeholder="User Name" runat="server"></asp:TextBox><br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtuser" ErrorMessage="Username Required!!" Font-Size="Small"></asp:RequiredFieldValidator>
+        <br />
+        <asp:TextBox ID="txtpass" CssClass="input" placeholder="Password" TextMode="Password" runat="server"></asp:TextBox><br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtpass" ErrorMessage="Password Required!!" Font-Size="Small"></asp:RequiredFieldValidator>
+        <br />
+
+        <asp:Button ID="Button1" CssClass="button-3d" Width="100%" runat="server" Text="login" OnClick="Button1_Click" /><br />
+        <br />
+        <asp:Label ID="Label1" runat="server" Visible="False"></asp:Label>
+        <br />    
+        <ul>
+        <li><a href="../index.aspx" class="round green">Go Back<span class="round">That is, if you want to go back</span></a></li>
+        <li><a href="register.aspx" class="round yellow">Sign Up<span class="round">Take a look.If you don't have account</span></a></li>
+  
+       </ul>
+       
+        <br /><br />
+        
+    </div> 
+        
+    </form>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
